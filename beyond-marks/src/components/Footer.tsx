@@ -73,14 +73,13 @@ export default function Footer() {
             </p>
             <div className="space-y-3">
               {[
-                { flag: "🇮🇳", country: "India" },
-                { flag: "🇬🇧", country: "United Kingdom" },
-                { flag: "🇦🇪", country: "UAE" },
-                { flag: "🇸🇬", country: "Singapore" },
-                { flag: "🇦🇺", country: "Australia" },
-              ].map(({ flag, country }) => (
-                <p key={country} className="text-white/50 text-sm">
-                  {flag} {country}
+                "🌍 Students across Asia",
+                "🌍 Students across Europe",
+                "🌍 Students across Middle East",
+                "🌍 Students across Australia and beyond",
+              ].map((region) => (
+                <p key={region} className="text-white/50 text-sm">
+                  {region}
                 </p>
               ))}
             </div>
@@ -93,7 +92,7 @@ export default function Footer() {
             © 2025 Beyond Marks · Himanshu Gupta · Mentoring globally from the Maldives 🌊
           </p>
           <p className="text-white/30 text-xs text-center sm:text-right">
-            Ages 6–25 · 1-on-1 Only · Pay As You Go
+            Ages 6–30 · 1-on-1 Only · Pay As You Go
           </p>
         </div>
       </div>

@@ -123,24 +123,24 @@ export default function BookCall() {
               <div className="space-y-2 mb-4">
                 <div className="flex justify-between text-sm">
                   <span className="text-white/70">Friday and Saturday</span>
-                  <span className="text-white/50">9:00 AM – 9:00 PM IST</span>
+                  <span className="text-white/50">9 AM to 9 PM IST</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-white/70">Monday to Thursday</span>
-                  <span className="text-white/50">6:00 PM – 9:00 PM IST</span>
+                  <span className="text-white/50">6 PM to 9 PM IST</span>
                 </div>
               </div>
               <div className="border-t border-white/10 pt-4 mb-3">
-                <p className="text-white/40 text-xs mb-2">IST (UTC+5:30) works out to:</p>
+                <p className="text-white/40 text-xs mb-2">IST (UTC+5:30) — students from any timezone welcome.</p>
                 <div className="grid grid-cols-2 gap-x-4 gap-y-1">
                   {[
-                    ["🇬🇧 UK", "IST −4:30 (BST) / −5:30 (GMT)"],
-                    ["🇦🇪 UAE", "IST −1:30"],
-                    ["🇸🇬 Singapore", "IST +2:30"],
-                    ["🇦🇺 Australia", "IST +4:30 (AEST)"],
-                  ].map(([flag, offset]) => (
-                    <p key={flag} className="text-white/40 text-xs">
-                      {flag} {offset}
+                    ["🌍 Europe", "IST −4:30 to −5:30"],
+                    ["🌍 Middle East", "IST −1:30 to −2:30"],
+                    ["🌍 Southeast Asia", "IST +1:30 to +2:30"],
+                    ["🌍 Australia", "IST +4:30 to +5:30"],
+                  ].map(([region, offset]) => (
+                    <p key={region} className="text-white/40 text-xs">
+                      {region} {offset}
                     </p>
                   ))}
                 </div>

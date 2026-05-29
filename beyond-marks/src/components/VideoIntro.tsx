@@ -67,19 +67,6 @@ export default function VideoIntro() {
               )}
             </div>
 
-            {/* Trust chips */}
-            <div className="flex flex-wrap gap-3 mt-6">
-              {["Recorded in the Maldives", "90 seconds", "No sales pitch"].map(
-                (chip) => (
-                  <span
-                    key={chip}
-                    className="inline-flex items-center px-4 py-1.5 rounded-full bg-white border border-[#F0EBE0] text-[#5A6070] text-sm"
-                  >
-                    {chip}
-                  </span>
-                )
-              )}
-            </div>
           </motion.div>
 
           {/* Right: Bullets + CTA (40%) */}

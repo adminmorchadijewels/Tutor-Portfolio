@@ -41,7 +41,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-16 items-center">
           {/* Text — 3/5 */}
           <motion.div
-            className="lg:col-span-3 order-2 lg:order-1"
+            className="lg:col-span-3 order-2 lg:order-1 min-w-0"
             variants={container}
             initial="hidden"
             animate="show"
@@ -50,7 +50,7 @@ export default function Hero() {
             <motion.div variants={item} className="mb-8">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5 text-white/80 text-sm">
                 <span className="w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse flex-shrink-0" />
-                Now accepting students: India · UK · UAE · Singapore
+                Now accepting students worldwide
               </span>
             </motion.div>
 
@@ -77,29 +77,26 @@ export default function Hero() {
             {/* CTAs */}
             <motion.div
               variants={item}
-              className="flex flex-col sm:flex-row gap-4 mb-12"
+              className="flex flex-col gap-3 sm:flex-row sm:gap-4 mb-12"
             >
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#C9A84C] text-[#1C1C1E] font-semibold text-base hover:bg-[#E8D5A0] hover:scale-[1.02] transition-all duration-200 min-h-[52px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#C9A84C] text-[#1C1C1E] font-semibold text-base hover:bg-[#E8D5A0] hover:scale-[1.02] transition-all duration-200 min-h-[52px]"
                 style={{ touchAction: "manipulation", WebkitTapHighlightColor: "transparent" } as React.CSSProperties}
               >
                 Book a Free Discovery Call
               </a>
               <a
                 href="#method"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-[#C9A84C] text-[#C9A84C] font-medium text-base hover:bg-[#C9A84C]/10 transition-all duration-200 min-h-[52px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full border border-[#C9A84C] text-[#C9A84C] font-medium text-base hover:bg-[#C9A84C]/10 transition-all duration-200 min-h-[52px]"
                 style={{ touchAction: "manipulation", WebkitTapHighlightColor: "transparent" } as React.CSSProperties}
               >
                 See How It Works ↓
               </a>
             </motion.div>
 
-            {/* Trust bar — horizontal scroll on mobile */}
-            <motion.div
-              variants={item}
-              className="pt-8 border-t border-white/10"
-            >
+            {/* Trust bar */}
+            <motion.div variants={item} className="pt-8 border-t border-white/10">
               <div className="flex gap-x-6 gap-y-2 overflow-x-auto pb-1 scrollbar-none flex-nowrap lg:flex-wrap">
                 {TRUST_BAR_ITEMS.map((t) => (
                   <span
@@ -117,16 +114,16 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Photo — 2/5 — hidden below 380px to prevent overflow */}
+          {/* Photo — 2/5 — hidden below 380px */}
           <motion.div
-            className="lg:col-span-2 hidden min-[380px]:flex justify-center lg:justify-end order-1 lg:order-2"
+            className="lg:col-span-2 hidden md:flex justify-center lg:justify-end order-1 lg:order-2"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            <div className="relative w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[320px]">
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]">
               {!imgError ? (
-                <div className="relative w-full h-[240px] sm:h-[300px] lg:h-[500px] rounded-2xl overflow-hidden ring-2 ring-[#C9A84C]/30">
+                <div className="relative w-full aspect-[4/5] max-h-[360px] lg:max-h-none rounded-2xl overflow-hidden ring-2 ring-[#C9A84C]/30">
                   <Image
                     src="/himanshu.jpg"
                     alt="Himanshu Gupta — Beyond Marks mentor and IIT Madras graduate"
@@ -134,63 +131,34 @@ export default function Hero() {
                     priority
                     className="object-cover object-top"
                     onError={() => setImgError(true)}
-                    sizes="(max-width: 1024px) 300px, 320px"
+                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 360px"
                   />
                 </div>
               ) : (
-                <div className="w-full h-[240px] sm:h-[300px] lg:h-[500px] rounded-2xl bg-[#2C2C2E] flex flex-col items-center justify-center overflow-hidden border border-white/10 ring-2 ring-[#C9A84C]/30">
-                  <div className="w-24 h-24 rounded-full bg-[#1C1C1E] border-2 border-[#C9A84C] flex items-center justify-center mb-4">
-                    <span
-                      className="text-[#C9A84C] text-3xl font-semibold"
-                      style={{ fontFamily: "var(--font-playfair)" }}
-                    >
+                <div className="w-full aspect-[4/5] max-h-[360px] lg:max-h-none rounded-2xl bg-[#2C2C2E] flex flex-col items-center justify-center overflow-hidden border border-white/10 ring-2 ring-[#C9A84C]/30">
+                  <div className="w-20 h-20 rounded-full bg-[#1C1C1E] border-2 border-[#C9A84C] flex items-center justify-center mb-4">
+                    <span className="text-[#C9A84C] text-3xl font-semibold" style={{ fontFamily: "var(--font-playfair)" }}>
                       H
                     </span>
                   </div>
-                  <p
-                    className="text-white text-lg font-semibold"
-                    style={{ fontFamily: "var(--font-playfair)" }}
-                  >
+                  <p className="text-white text-lg font-semibold" style={{ fontFamily: "var(--font-playfair)" }}>
                     Himanshu Gupta
                   </p>
-                  <p className="text-white/60 text-sm mb-4">
-                    Senior AI Engineer · IIT Madras
-                  </p>
-                  <div className="flex flex-wrap gap-2 justify-center px-4">
-                    {["🇮🇳 India", "🇬🇧 UK", "🇦🇪 UAE", "🇸🇬 SG"].map((geo) => (
-                      <span
-                        key={geo}
-                        className="px-2.5 py-1 rounded-full bg-white/10 text-white/80 text-xs"
-                      >
-                        {geo}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="text-white/60 text-sm mb-4">Senior AI Engineer · IIT Madras</p>
+                  <span className="px-3 py-1.5 rounded-full bg-white/10 text-white/70 text-xs">
+                    🌍 Global Students
+                  </span>
                 </div>
               )}
 
               {/* Floating card */}
-              <div className="absolute -bottom-4 -left-4 bg-[#C9A84C] rounded-xl px-4 py-3 shadow-lg">
-                <p className="text-[#1C1C1E] font-semibold text-sm">
-                  IIT Madras Graduate
-                </p>
-                <p className="text-[#1C1C1E]/70 text-xs">
-                  Building independent thinkers
-                </p>
+              <div className="absolute -bottom-4 left-0 sm:-left-4 bg-[#C9A84C] rounded-xl px-4 py-3 shadow-lg">
+                <p className="text-[#1C1C1E] font-semibold text-sm">IIT Madras Graduate</p>
+                <p className="text-[#1C1C1E]/70 text-xs">Building independent thinkers</p>
               </div>
             </div>
           </motion.div>
         </div>
-
-        {/* Bottom italic */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="text-center text-white/30 text-sm italic mt-16"
-        >
-          Mentoring globally from the Maldives 🌊
-        </motion.p>
       </div>
     </section>
   );

@@ -22,18 +22,18 @@ export const metadata: Metadata = {
     template: "%s | Beyond Marks",
   },
   description:
-    "IIT Madras graduate and Senior AI Engineer mentoring students aged 6 to 25 from India, UK, UAE and Singapore. Learn how to think independently, not just score marks. Book a free discovery call today.",
+    "IIT Madras graduate and Senior AI Engineer mentoring students aged 6 to 30, worldwide. Learn how to think independently, not just score marks. Book a free discovery call today.",
   keywords: [
-    "online tutor India",
     "IIT mentor online",
     "holistic education mentor",
     "critical thinking tutor for kids",
     "independent learning mentor",
-    "online tutor Dubai",
-    "online tutor Singapore",
+    "online tutor worldwide",
+    "online learning mentor",
     "beyond marks",
     "himanshu gupta mentor",
     "IIT Madras tutor",
+    "global online tutor",
   ],
   authors: [{ name: "Himanshu Gupta" }],
   creator: "Himanshu Gupta",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Beyond Marks",
     title: "Beyond Marks — Where Curious Minds Are Built, Not Drilled.",
     description:
-      "IIT Madras graduate and Senior AI Engineer mentoring students aged 6 to 25. Book a free 20-minute discovery call.",
+      "IIT Madras graduate and Senior AI Engineer mentoring students aged 6 to 30, worldwide. Book a free 20-minute discovery call.",
     images: [
       {
         url: "/og-image.jpg",

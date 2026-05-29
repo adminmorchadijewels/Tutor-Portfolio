@@ -1,26 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/lib/blogPosts";
 
 export default function Blog() {
-  const [toast, setToast] = useState(false);
-
-  const showToast = () => {
-    setToast(true);
-    setTimeout(() => setToast(false), 2500);
-  };
-
   return (
-    <section id="blog" className="py-16 lg:py-24 bg-white relative">
-      {/* Toast */}
-      {toast && (
-        <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-[#1C1C1E] text-white text-sm px-5 py-3 rounded-full shadow-lg">
-          Full article coming soon — subscribe to be notified!
-        </div>
-      )}
-
+    <section id="blog" className="py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
         <motion.div
@@ -74,22 +60,16 @@ export default function Blog() {
               {/* Bottom row */}
               <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#F0EBE0]">
                 <span className="text-[#5A6070] text-xs">{post.readTime}</span>
-                <button
-                  onClick={showToast}
+                <Link
+                  href={`/blog/${post.slug}`}
                   className="text-[#C9A84C] text-[13px] font-medium hover:underline"
                 >
                   Read More →
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Below grid note */}
-        <p className="text-center text-[#5A6070] text-[13px] italic">
-          Full articles coming soon. Subscribe to the newsletter to be notified
-          when they go live.
-        </p>
       </div>
     </section>
   );

@@ -98,3 +98,31 @@ button,
     line-height: 1.65;
   }
 }
+
+/* Infinite carousel animations */
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes scroll-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.carousel-track-left {
+  animation: scroll-left 30s linear infinite;
+}
+.carousel-track-right {
+  animation: scroll-right 30s linear infinite;
+}
+.carousel-row:hover .carousel-track-left,
+.carousel-row:hover .carousel-track-right {
+  animation-play-state: paused;
+}
+
+.carousel-track {
+  animation: scroll-left 35s linear infinite;
+}
+.carousel-row:hover .carousel-track {
+  animation-play-state: paused;
+}

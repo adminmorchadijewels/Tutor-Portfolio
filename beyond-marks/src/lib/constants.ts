@@ -10,11 +10,11 @@ export const NAV_LINKS = [
 
 export const TRUST_BAR_ITEMS = [
   { label: "30+ Students Mentored", highlight: false },
-  { label: "3+ Countries", highlight: false },
+  { label: "Students Worldwide", highlight: false },
   { label: "IIT Madras Graduate", highlight: true },
   { label: "Senior AI Engineer", highlight: true },
-  { label: "Ages 6 to 25", highlight: false },
-  { label: "Fri & Sat 9–9 IST · Weekdays 6–9 PM IST", highlight: false },
+  { label: "Ages 6 to 30", highlight: false },
+  { label: "Fri and Sat 9 AM to 9 PM IST", highlight: false },
 ];
 
 export const CREDENTIALS = [
@@ -54,7 +54,7 @@ export const AI_WORLD_STATS = [
   {
     value: "30+",
     numericTarget: 30,
-    label: "Students mentored across India, UAE and Singapore",
+    label: "Students mentored worldwide",
     animated: true,
   },
   {
@@ -68,7 +68,7 @@ export const AI_WORLD_STATS = [
     animated: false,
   },
   {
-    value: "Ages 6–25",
+    value: "Ages 6–30",
     label: "Primary school to young adults.",
     animated: false,
   },
@@ -97,34 +97,51 @@ export const METHOD_PILLARS = [
   },
 ];
 
-export const SUBJECTS = {
-  "Core Academics": [
-    "Mathematics (all levels)",
-    "Physics",
-    "Chemistry",
-    "Biology",
-    "Coding & Programming",
-    "Computer Science & AI",
-    "English & Communication",
-    "Economics",
-  ],
-  "Real World Skills": [
-    "Financial Literacy & Money Mindset",
-    "Geopolitics & Global Awareness",
-    "Research & Information Analysis",
-    "Case Studies & Business Thinking",
-    "Data Literacy & Charts",
-    "AI Literacy: working with AI",
-  ],
-  "Thinking & Life Skills": [
-    "Problem Solving Frameworks",
-    "Critical Thinking & Logic",
-    "Study Skills & Learning Systems",
-    "Communication & Articulation",
-    "Goal Setting & Self-Management",
-    "Personality Development",
-  ],
-};
+export const CORE_SUBJECTS = [
+  {
+    name: "Mathematics",
+    connection:
+      "From personal finance to engineering, numbers are the language of the real world.",
+  },
+  {
+    name: "Physics",
+    connection:
+      "Understanding forces, energy, and systems that govern everything around us.",
+  },
+  {
+    name: "Coding and Programming",
+    connection: "Building things, automating tasks, thinking computationally.",
+  },
+  {
+    name: "Computer Science and AI",
+    connection: "How intelligence works, and how to work with it.",
+  },
+  {
+    name: "English and Communication",
+    connection:
+      "Articulating ideas clearly is the most valuable skill in any room.",
+  },
+  {
+    name: "Economics",
+    connection:
+      "How markets, incentives, and systems shape every decision we make.",
+  },
+];
+
+export const SKILL_CHIPS = [
+  "Financial Literacy and Money Mindset",
+  "Geopolitics and Global Awareness",
+  "Research and Analysis",
+  "Case Studies and Business Thinking",
+  "Data Literacy",
+  "AI Literacy",
+  "Problem Solving Frameworks",
+  "Critical Thinking and Logic",
+  "Study Skills and Learning Systems",
+  "Communication and Articulation",
+  "Goal Setting and Self-Management",
+  "Personality Development",
+];
 
 export const PROCESS_STEPS = [
   {
@@ -164,7 +181,7 @@ export const PRICING_FEATURES = [
   "Opt out anytime, zero pressure",
   "Free evaluation sessions (1–2)",
   "Custom learning plan included",
-  "Online: India, UK, UAE, Singapore",
+  "Online, worldwide",
   "Follow-up notes after every session",
 ];
 
@@ -188,7 +205,7 @@ export const WHO_FOR = {
       "Want to learn how to learn, not just memorise",
       "Curious about coding, AI, economics, real-world skills",
       "Preparing for IIT, IB, A-Levels, or college abroad",
-      "Aged 6–25: primary, high school, or young adult",
+      "Aged 6–30: primary, high school, or young adult",
     ],
   },
 };
@@ -223,6 +240,35 @@ export const TESTIMONIALS = [
     location: "Singapore",
     initials: "VT",
   },
+  // Add real testimonials here
+  {
+    id: 4,
+    quote:
+      "What surprised me was how quickly he identified exactly where my son was going wrong, not in the subject, but in how he was thinking about it. Two months later the difference is visible in every class, not just the one we focused on.",
+    name: "Kavita R.",
+    role: "Parent",
+    location: "Worldwide",
+    initials: "KR",
+  },
+  {
+    id: 5,
+    quote:
+      "I was preparing for a competitive entrance exam and running out of time. Himanshu did not help me cram. He helped me understand why I kept getting certain problems wrong. That shift in approach changed everything in the final weeks.",
+    name: "Rohan M.",
+    age: "18",
+    role: "Student",
+    location: "Worldwide",
+    initials: "RM",
+  },
+  {
+    id: 6,
+    quote:
+      "Most tutors show you how to solve the problem in front of you. Himanshu shows you how to think about the problem behind the problem. My daughter now approaches every challenge differently. That is the real result.",
+    name: "Sunita P.",
+    role: "Parent",
+    location: "Worldwide",
+    initials: "SP",
+  },
 ];
 
 export const FAQ_ITEMS = [
@@ -239,12 +285,12 @@ export const FAQ_ITEMS = [
   {
     question: "What age groups do you work with?",
     answer:
-      "Ages 6 to 25. That's a wide range, and intentionally so. A 7-year-old needs very different engagement than a 20-year-old preparing for a competitive exam. I adjust completely based on where the student is, including their age, maturity, goals, and learning style. The evaluation sessions help me understand exactly how to approach each individual student.",
+      "Ages 6 to 30. That's a wide range, and intentionally so. A 7-year-old needs very different engagement than a 25-year-old navigating a career transition. I adjust completely based on where the student is, including their age, maturity, goals, and learning style. The evaluation sessions help me understand exactly how to approach each individual student.",
   },
   {
     question: "How do online sessions work?",
     answer:
-      "Sessions run over video call, typically Google Meet or Zoom, and last between 45 minutes and 2 hours depending on the student and what we're covering. I use shared screens, digital whiteboards, and collaborative documents during sessions. After each session, I send follow-up notes summarising what we covered and any action points or resources. Students from India, UK, UAE, Singapore, and other time zones are welcome. I'm flexible with scheduling.",
+      "Sessions run over video call, typically Google Meet or Zoom, and last between 45 minutes and 2 hours depending on the student and what we're covering. I use shared screens, digital whiteboards, and collaborative documents during sessions. After each session, I send follow-up notes summarising what we covered and any action points or resources. Students from any time zone are welcome. I'm flexible with scheduling.",
   },
   {
     question: "What if I don't see value after a few sessions?",

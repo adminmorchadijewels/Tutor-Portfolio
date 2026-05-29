@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 
 interface FormData {
   name: string;
-  email: string;
+  whatsapp: string;
   childAge: string;
 }
 
@@ -27,7 +27,7 @@ export default function LeadMagnet() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
-          subject: "Lead Magnet Request — Beyond Marks",
+          subject: "Lead Magnet — WhatsApp Request — Beyond Marks",
           redirect: "false",
           ...data,
         }),
@@ -104,14 +104,10 @@ export default function LeadMagnet() {
                     <span className="text-[#C9A84C] text-3xl">✓</span>
                   </div>
                   <p className="text-[#1C1C1E] font-semibold text-lg mb-2">
-                    Check your inbox!
+                    Got it!
                   </p>
                   <p className="text-[#5A6070] text-sm">
-                    The guide is on its way.
-                  </p>
-                  <p className="text-[#5A6070] text-xs mt-4 italic">
-                    You will also receive occasional insights on learning and
-                    education. Unsubscribe anytime.
+                    We will send the guide to your WhatsApp shortly.
                   </p>
                 </div>
               ) : (
@@ -131,22 +127,19 @@ export default function LeadMagnet() {
                   </div>
 
                   <div>
-                    <label className={labelClass}>Email Address</label>
+                    <label className={labelClass}>WhatsApp Number</label>
                     <input
-                      {...register("email", {
-                        required: "Email is required",
-                        pattern: {
-                          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                          message: "Invalid email",
-                        },
+                      {...register("whatsapp", {
+                        required: "WhatsApp number is required",
+                        minLength: { value: 7, message: "Enter a valid number" },
                       })}
-                      type="email"
-                      placeholder="your@email.com"
+                      type="tel"
+                      placeholder="+91 98765 43210"
                       className={inputClass}
                       suppressHydrationWarning={true}
                     />
-                    {errors.email && (
-                      <p className="mt-1 text-red-500 text-xs">{errors.email.message}</p>
+                    {errors.whatsapp && (
+                      <p className="mt-1 text-red-500 text-xs">{errors.whatsapp.message}</p>
                     )}
                   </div>
 

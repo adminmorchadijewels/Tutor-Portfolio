@@ -123,20 +123,20 @@ export default function About() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[280px] lg:max-w-[320px]">
+            <div className="relative w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[340px]">
               {!imgError ? (
-                <div className="relative w-full h-[280px] lg:h-[480px] rounded-2xl overflow-hidden ring-2 ring-[#C9A84C]/30">
+                <div className="relative w-full aspect-[3/4] max-h-[320px] lg:max-h-none rounded-2xl overflow-hidden ring-2 ring-[#C9A84C]/30">
                   <Image
                     src="/himanshu.jpg"
                     alt="Himanshu Gupta — Senior AI Engineer and learning mentor"
                     fill
                     className="object-cover object-top"
                     onError={() => setImgError(true)}
-                    sizes="(max-width: 1024px) 280px, 320px"
+                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 300px, 340px"
                   />
                 </div>
               ) : (
-                <div className="w-full h-[280px] lg:h-[480px] rounded-2xl bg-[#1C1C1E] flex flex-col items-center justify-center border border-[#C9A84C]/20 ring-2 ring-[#C9A84C]/30">
+                <div className="w-full aspect-[3/4] max-h-[320px] lg:max-h-none rounded-2xl bg-[#1C1C1E] flex flex-col items-center justify-center border border-[#C9A84C]/20 ring-2 ring-[#C9A84C]/30">
                   <div className="w-24 h-24 rounded-full bg-[#2C2C2E] border-2 border-[#C9A84C] flex items-center justify-center mb-4">
                     <span
                       className="text-[#C9A84C] text-3xl font-semibold"
