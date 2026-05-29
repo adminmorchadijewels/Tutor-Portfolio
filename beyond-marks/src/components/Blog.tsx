@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/lib/blogPosts";
+import MobileCarousel from "@/components/MobileCarousel";
 
 export default function Blog() {
   return (
@@ -28,8 +29,39 @@ export default function Blog() {
           </h2>
         </motion.div>
 
-        {/* Cards grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        {/* Mobile carousel */}
+        <div className="md:hidden mb-10">
+          <MobileCarousel
+            items={blogPosts.map((post, i) => (
+              <div key={i} className="mx-1 bg-[#FAF7F2] rounded-2xl p-5 flex flex-col min-h-[200px]">
+                <span className="inline-block text-[11px] bg-[#C9A84C]/15 text-[#C9A84C] rounded-full px-3 py-1 font-medium mb-3 self-start">
+                  {post.tag}
+                </span>
+                <h3
+                  className="text-base font-medium text-[#1C1C1E] leading-snug mb-2"
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
+                  {post.title}
+                </h3>
+                <p className="text-xs text-[#5A6070] leading-relaxed flex-1 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-black/6">
+                  <span className="text-xs text-[#5A6070]">{post.readTime}</span>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="text-[#C9A84C] text-xs font-medium hover:underline"
+                  >
+                    Read More →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          />
+        </div>
+
+        {/* Desktop grid — hidden on mobile */}
+        <div className="hidden md:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {blogPosts.map((post, i) => (
             <motion.div
               key={post.id}

@@ -7,7 +7,7 @@ export default function WhoFor() {
   const sections = [WHO_FOR.parents, WHO_FOR.students];
 
   return (
-    <section id="who-for" className="py-16 lg:py-24 bg-[#1C1C1E]">
+    <section id="who-for" className="py-12 md:py-20 bg-[#1C1C1E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
         <motion.div
@@ -36,10 +36,10 @@ export default function WhoFor() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-[#2C2C2E] rounded-2xl p-5 sm:p-8 border border-white/10"
+              className="bg-[#2C2C2E] rounded-2xl p-5 md:p-8 border border-white/10"
             >
               <h3
-                className="text-[#C9A84C] text-xl font-semibold mb-4"
+                className="text-[#C9A84C] text-lg md:text-2xl font-semibold mb-4"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 {section.title}
@@ -47,9 +47,9 @@ export default function WhoFor() {
               <p className="text-white/70 text-sm leading-relaxed mb-6 font-light">
                 {section.intro}
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-0">
                 {section.points.map((point) => (
-                  <li key={point} className="flex items-start gap-3">
+                  <li key={point} className="flex items-start gap-2 py-1">
                     <span className="text-[#C9A84C] mt-0.5 flex-shrink-0">→</span>
                     <span className="text-white/70 text-sm leading-snug">
                       {point}

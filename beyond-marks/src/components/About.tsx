@@ -69,7 +69,7 @@ export default function About() {
               {CREDENTIALS.map((c) => (
                 <span
                   key={c}
-                  className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#C9A84C] bg-white text-[#1C1C1E] text-sm font-medium"
+                  className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-[#C9A84C] bg-white text-[#1C1C1E] text-xs md:text-sm font-medium"
                 >
                   {c}
                 </span>

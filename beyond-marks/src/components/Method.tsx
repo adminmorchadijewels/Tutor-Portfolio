@@ -2,6 +2,7 @@
 
 import { Fragment } from "react";
 import { motion } from "framer-motion";
+import MobileCarousel from "@/components/MobileCarousel";
 
 const nodes = [
   {
@@ -67,8 +68,34 @@ export default function Method() {
           </p>
         </motion.div>
 
-        {/* Desktop: horizontal row */}
-        <div className="hidden lg:flex items-stretch mt-10">
+        {/* Mobile carousel */}
+        <div className="md:hidden mt-10">
+          <MobileCarousel
+            items={nodes.map((node) => (
+              <div className="bg-[#FAF7F2] rounded-2xl p-5 mx-1 flex flex-col min-h-[220px]">
+                <div
+                  className="text-4xl text-[#C9A84C]/20 font-semibold leading-none mb-2"
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
+                  {node.number}
+                </div>
+                <div className="text-2xl mb-2">{node.emoji}</div>
+                <h3 className="text-base font-medium text-[#1C1C1E] mb-2">
+                  {node.title}
+                </h3>
+                <p className="text-xs text-[#5A6070] leading-relaxed flex-1">
+                  {node.story}
+                </p>
+                <p className="text-[10px] text-[#C9A84C] italic mt-3">
+                  {node.tag}
+                </p>
+              </div>
+            ))}
+          />
+        </div>
+
+        {/* Desktop flow — hidden on mobile */}
+        <div className="hidden md:flex items-stretch gap-0 mt-10">
           {nodes.map((node, i) => (
             <Fragment key={node.number}>
               <motion.div
@@ -111,47 +138,6 @@ export default function Method() {
                 >
                   →
                 </motion.div>
-              )}
-            </Fragment>
-          ))}
-        </div>
-
-        {/* Mobile: single column */}
-        <div className="lg:hidden flex flex-col gap-4 mt-10">
-          {nodes.map((node, i) => (
-            <Fragment key={node.number}>
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-[#FAF7F2] rounded-2xl p-5"
-              >
-                <span
-                  className="text-[48px] leading-none font-semibold select-none"
-                  style={{
-                    fontFamily: "var(--font-playfair)",
-                    color: "rgba(201,168,76,0.15)",
-                  }}
-                >
-                  {node.number}
-                </span>
-                <span className="text-2xl mt-1 block">{node.emoji}</span>
-                <h3 className="text-[#1C1C1E] text-base font-medium mt-2 mb-2">
-                  {node.title}
-                </h3>
-                <p className="text-[#5A6070] text-[12px] leading-relaxed">
-                  {node.story}
-                </p>
-                <p
-                  className="text-[#C9A84C] text-[10px] italic mt-3"
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                >
-                  {node.tag}
-                </p>
-              </motion.div>
-              {i < nodes.length - 1 && (
-                <div className="text-center text-[#C9A84C] text-xl select-none">↓</div>
               )}
             </Fragment>
           ))}

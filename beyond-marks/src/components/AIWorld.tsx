@@ -16,7 +16,7 @@ const stagger: Variants = {
 
 export default function AIWorld() {
   return (
-    <section id="ai-world" className="py-16 lg:py-24 bg-[#1C1C1E]">
+    <section id="ai-world" className="py-12 md:py-20 bg-[#1C1C1E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
         <motion.div
@@ -48,15 +48,15 @@ export default function AIWorld() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}
-            className="space-y-6"
+            className="space-y-3 md:space-y-4"
           >
-            <motion.p variants={fadeUp} className="text-white/75 text-lg leading-relaxed font-light">
+            <motion.p variants={fadeUp} className="text-white/75 text-sm md:text-base leading-relaxed font-light">
               We are living through the biggest shift in human history. AI can
               write essays, solve equations, generate code, and answer any
               factual question in seconds.
             </motion.p>
 
-            <motion.p variants={fadeUp} className="text-white/75 text-lg leading-relaxed font-light">
+            <motion.p variants={fadeUp} className="text-white/75 text-sm md:text-base leading-relaxed font-light">
               The students who will thrive aren&apos;t the ones who memorised the
               most. They&apos;re the ones who can{" "}
               <span className="text-[#C9A84C] font-medium">
@@ -65,7 +65,7 @@ export default function AIWorld() {
               </span>
             </motion.p>
 
-            <motion.p variants={fadeUp} className="text-white/75 text-lg leading-relaxed font-light">
+            <motion.p variants={fadeUp} className="text-white/75 text-sm md:text-base leading-relaxed font-light">
               The window to build these skills is narrow. Before 25, the brain
               is wiring its habits of thinking, curiosity, and resilience.
               Right now. A good mentor at this stage doesn&apos;t just improve
@@ -99,10 +99,10 @@ export default function AIWorld() {
                     transition: { duration: 0.5, ease: "easeOut" },
                   },
                 }}
-                className="bg-[#2C2C2E] rounded-2xl p-6 border border-[#C9A84C]/20"
+                className="bg-[#2C2C2E] rounded-2xl p-4 md:p-6 border border-[#C9A84C]/20"
               >
                 <p
-                  className="text-[#C9A84C] text-2xl font-bold mb-2"
+                  className="text-[#C9A84C] text-2xl md:text-3xl font-bold mb-2"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   {stat.animated && stat.numericTarget ? (

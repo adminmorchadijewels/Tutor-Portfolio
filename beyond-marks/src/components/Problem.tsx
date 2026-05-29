@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import MobileCarousel from "@/components/MobileCarousel";
 
 const panels = [
   {
@@ -63,8 +64,44 @@ export default function Problem() {
           </p>
         </motion.div>
 
-        {/* 2×2 comic strip grid */}
-        <div className="grid sm:grid-cols-2 gap-4">
+        {/* Mobile carousel — visible on mobile only */}
+        <div className="md:hidden">
+          <MobileCarousel
+            items={panels.map((panel, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden border border-white/[0.08] mx-1">
+                <div
+                  className="flex flex-col items-center py-5 px-4"
+                  style={{
+                    background: "rgba(201,168,76,0.08)",
+                    borderBottom: "1px solid rgba(255,255,255,0.06)",
+                  }}
+                >
+                  <span className="text-4xl mb-2">{panel.emoji}</span>
+                  <span className="text-[10px] uppercase tracking-widest text-white/40">
+                    {panel.scene}
+                  </span>
+                </div>
+                <div className="p-5">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#C9A84C]/15 text-[#C9A84C] text-[10px] font-medium mb-3">
+                    {panel.who}
+                  </span>
+                  <p
+                    className="text-white text-sm leading-relaxed italic mb-2"
+                    style={{ fontFamily: "var(--font-playfair)" }}
+                  >
+                    &ldquo;{panel.quote}&rdquo;
+                  </p>
+                  <p className="text-white/45 text-xs leading-relaxed">
+                    {panel.truth}
+                  </p>
+                </div>
+              </div>
+            ))}
+          />
+        </div>
+
+        {/* Desktop grid — hidden on mobile */}
+        <div className="hidden md:grid grid-cols-2 gap-4">
           {panels.map((panel, i) => (
             <motion.div
               key={i}

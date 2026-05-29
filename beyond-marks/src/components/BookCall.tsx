@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { InlineWidget } from "react-calendly";
+import { InlineWidget, PopupButton } from "react-calendly";
 
 interface FormData {
   name: string;
@@ -71,8 +71,8 @@ export default function BookCall() {
               Book a Free Discovery Call
             </p>
             <h2
-              className="text-3xl lg:text-4xl xl:text-5xl font-semibold text-white mb-6 leading-snug"
-              style={{ fontFamily: "var(--font-playfair)" }}
+              className="font-semibold text-white mb-6 leading-snug"
+              style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(24px, 5vw, 42px)" }}
             >
               Not sure yet? Let&apos;s just talk.
             </h2>
@@ -112,8 +112,22 @@ export default function BookCall() {
               </a>
             </div>
 
+            {/* Mobile popup booking button */}
+            <div className="md:hidden mt-6 mb-6">
+              <PopupButton
+                url={calendlyUrl}
+                rootElement={
+                  typeof document !== "undefined"
+                    ? document.getElementById("__next") ?? document.body
+                    : undefined as unknown as HTMLElement
+                }
+                text="Open Booking Calendar"
+                className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-[#C9A84C] text-[#1C1C1E] font-semibold text-base min-h-[52px]"
+              />
+            </div>
+
             {/* Availability card */}
-            <div className="bg-[#2C2C2E] rounded-xl p-5 mb-10">
+            <div className="hidden md:block bg-[#2C2C2E] rounded-xl p-5 mb-10">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-[#C9A84C] text-base">🕐</span>
                 <span className="text-[#C9A84C] text-xs font-semibold uppercase tracking-widest">
@@ -283,19 +297,21 @@ export default function BookCall() {
             )}
           </motion.div>
 
-          {/* Right: Calendly */}
-          <motion.div
-            initial={{ opacity: 0, x: 32 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-2xl overflow-hidden border border-white/10 bg-white"
-          >
-            <InlineWidget
-              url={calendlyUrl}
-              styles={{ minWidth: "320px", height: "clamp(500px, 700px, 700px)" }}
-            />
-          </motion.div>
+          {/* Right: Calendly — desktop only */}
+          <div className="hidden md:block">
+            <motion.div
+              initial={{ opacity: 0, x: 32 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="rounded-2xl overflow-hidden border border-white/10 bg-white"
+            >
+              <InlineWidget
+                url={calendlyUrl}
+                styles={{ minWidth: "320px", height: "clamp(500px, 700px, 700px)" }}
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

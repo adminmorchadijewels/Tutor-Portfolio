@@ -2,7 +2,7 @@ import { NAV_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#111111" }} className="pt-16 pb-8">
+    <footer style={{ background: "#111111" }} className="pt-10 pb-6 md:pt-16 md:pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Main grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mb-10 sm:mb-12 text-center sm:text-left">
@@ -40,7 +40,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/himanshugupta5458/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/50 hover:text-[#C9A84C] text-sm transition-colors"
+                className="hidden md:flex items-center gap-2 text-white/50 hover:text-[#C9A84C] text-sm transition-colors"
               >
                 <span>🔗</span>
                 <span>LinkedIn</span>
@@ -53,7 +53,7 @@ export default function Footer() {
             <p className="text-white text-sm font-semibold uppercase tracking-widest mb-6">
               Navigation
             </p>
-            <nav className="space-y-3">
+            <nav className="grid grid-cols-2 gap-x-4 gap-y-2 md:block md:space-y-3">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
@@ -67,7 +67,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Serving Students In */}
-          <div>
+          <div className="hidden md:block">
             <p className="text-white text-sm font-semibold uppercase tracking-widest mb-6">
               Serving Students In
             </p>

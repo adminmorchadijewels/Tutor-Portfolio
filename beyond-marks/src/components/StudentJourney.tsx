@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import MobileCarousel from "@/components/MobileCarousel";
 
 const journeys = [
   {
@@ -53,8 +54,40 @@ export default function StudentJourney() {
           </p>
         </motion.div>
 
-        {/* Journey cards */}
-        <div className="space-y-6 mb-16">
+        {/* Mobile carousel */}
+        <div className="md:hidden mb-16">
+          <MobileCarousel
+            items={journeys.map((journey, i) => (
+              <div key={i} className="mx-1 rounded-2xl overflow-hidden border border-black/8">
+                <div className="bg-[#FAF7F2] px-4 py-3 border-b border-black/6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-[#1C1C1E]">
+                    {journey.label}
+                  </p>
+                </div>
+                <div className="bg-[#FFF5F5] p-4 border-b border-black/6">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-red-400 mb-2">Before</p>
+                  <p className="text-sm text-[#1C1C1E] leading-relaxed">
+                    {journey.before}
+                  </p>
+                </div>
+                <div className="flex justify-center py-2 bg-white">
+                  <div className="w-7 h-7 rounded-full bg-[#C9A84C] flex items-center justify-center text-white text-sm">
+                    ↓
+                  </div>
+                </div>
+                <div className="bg-[#F0FFF4] p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-green-500 mb-2">After</p>
+                  <p className="text-sm text-[#1C1C1E] leading-relaxed">
+                    {journey.after}
+                  </p>
+                </div>
+              </div>
+            ))}
+          />
+        </div>
+
+        {/* Desktop grid — hidden on mobile */}
+        <div className="hidden md:block space-y-6 mb-16">
           {journeys.map((journey, i) => (
             <motion.div
               key={i}
@@ -81,15 +114,6 @@ export default function StudentJourney() {
                   <p className="text-[#5A6070] text-sm leading-relaxed font-light">
                     {journey.before}
                   </p>
-                </div>
-
-                {/* Mobile arrow: pointing down, centered between before/after */}
-                <div className="sm:hidden flex justify-center -my-3 relative z-10">
-                  <div className="w-6 h-6 rounded-full bg-[#C9A84C] flex items-center justify-center shadow-sm">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" className="w-3 h-3 rotate-90">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </div>
                 </div>
 
                 {/* After */}
