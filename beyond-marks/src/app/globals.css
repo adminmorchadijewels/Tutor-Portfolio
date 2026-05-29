@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-cream: #FAF7F2;
+  --color-cream-dark: #F0EBE0;
+  --color-charcoal: #1C1C1E;
+  --color-charcoal-light: #2C2C2E;
+  --color-charcoal-deep: #111111;
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8D5A0;
+  --color-muted: #5A6070;
+
+  /* Fonts */
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-dm-sans);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background: #FAF7F2;
+  color: #1C1C1E;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile tap targets */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Minimum tap target */
+button,
+[role="button"] {
+  min-height: 44px;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar (desktop) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1C1C1E;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A84C;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8D5A0;
+}
+
+/* Selection color */
+::selection {
+  background: #C9A84C;
+  color: #1C1C1E;
+}
+::-moz-selection {
+  background: #C9A84C;
+  color: #1C1C1E;
+}
+
+/* Mobile font baseline */
+@media (max-width: 639px) {
+  body {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+}
